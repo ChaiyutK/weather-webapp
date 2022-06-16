@@ -33,19 +33,19 @@ function App() {
     <div className={typeof data.name != "undefined" && data.main.temp > 20 ? "App hot" : typeof data.name != "undefined" && data.main.temp < 12 ? "App cold" : "App"}>
       <div className='weather-box'>
         <div className="weather-item">
-        <label>City:</label>
-        <input type="text" onChange={(event) => {setCity(event.target.value)}} onKeyPress={search} />
+        <input placeholder='Enter City Name' type="text" onChange={(event) => {setCity(event.target.value)}} onKeyPress={search} />
         </div>
       
       {(typeof data.name != "undefined" ? (
         <>
+        <div className="weather-item"><h2 className='cityname'>{data.name},{data.sys.country}</h2></div>
           <div className="weather-item"><h2 className='date'>{date}</h2></div>
-          <div className="weather-item"><h1>{data.name},{data.sys.country}</h1></div>
-          <div className="weather-item"><h2>{data.main.temp} °C</h2></div>
+          <div className="weather-item"><h2 className='temp'>{data.main.temp} °C</h2></div>
+          <div className="weather-item"><h2 className='cloud'>{data.weather[0].main}</h2></div>
         </>
       ) : "")}
       </div>
-    </div>
+    </div>  
   );
 }
 
