@@ -84,3 +84,13 @@ input{
 .temp:hover{
   transform: rotateY(360deg);
 }
+@media screen and (max-width:400px)
+{
+  .weather-box{
+    width: 375px;
+    height: 600px;
+  }
+  input{
+    width: 300px;
+  }
+}
