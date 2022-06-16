@@ -60,6 +60,11 @@ h2{
 }
 .temp{
   font-size: 3rem;
+  transform: rotateY(0deg);
+  transition: transform 2s;
+}
+.tempactive{
+  transform: rotateY(360deg);
 }
 .cloud{
   border: none;
@@ -74,4 +79,8 @@ input{
   border: none;
   font-family: 'Fjalla One', sans-serif;
   text-align: center;
+  
+}
+.temp:hover{
+  transform: rotateY(360deg);
 }
